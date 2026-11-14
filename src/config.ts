@@ -219,6 +219,14 @@ export const config = {
     goal: "Фінансова модель запуску: від рекламного бюджету до чистого прибутку",
   },
 
+  /** Кейси (модальне вікно з кнопки в шапці). Поки порожньо: додавайте об'єкти {niche, title, result, text} в items */
+  cases: {
+    button: "Кейси",
+    title: "Кейси",
+    empty: "Кейси з'являться тут",
+    items: [] as { niche: string; title: string; result: string; text: string }[],
+  },
+
   /** Блок 5: план по кроках */
   plan: {
     title: "План по кроках: що треба зробити",

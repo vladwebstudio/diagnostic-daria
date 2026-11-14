@@ -1,5 +1,6 @@
 import { config, type Currency } from "../config";
 import Photo from "./Photo";
+import CasesLink from "./CasesLink";
 
 interface Props {
   currency: Currency;
@@ -23,6 +24,8 @@ export default function Header({ currency, onCurrency }: Props) {
           <span className="font-display text-xl font-semibold leading-none tracking-tight">{expert.name}</span>
         </div>
 
+        <div className="flex items-center gap-5">
+        <CasesLink />
         <div className="flex rounded-full bg-white p-0.5 ring-1 ring-line">
           {currencies.map((c) => (
             <button
@@ -36,6 +39,7 @@ export default function Header({ currency, onCurrency }: Props) {
               {config.symbols[c]} {config.currencyLabels[c]}
             </button>
           ))}
+        </div>
         </div>
       </div>
     </header>
