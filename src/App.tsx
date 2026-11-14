@@ -2,6 +2,10 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import ProfileForm from "./components/ProfileForm";
 import LiveAnalysis from "./components/LiveAnalysis";
+import StateBlock from "./components/StateBlock";
+import ToolsBlock from "./components/ToolsBlock";
+import CalcBlock from "./components/CalcBlock";
+import PlanBlock from "./components/PlanBlock";
 import { useLocalStorage } from "./lib/useLocalStorage";
 import { fromDisplay, snap, toDisplay } from "./lib/money";
 import { initialState, type ClientState } from "./lib/types";
@@ -34,6 +38,11 @@ export default function App() {
           <ProfileForm state={state} update={update} />
           <LiveAnalysis state={state} update={update} />
         </div>
+
+        <StateBlock state={state} update={update} />
+        <ToolsBlock state={state} update={update} />
+        <CalcBlock state={state} update={update} />
+        <PlanBlock state={state} update={update} />
 
         <div className="flex justify-center py-6">
           <button

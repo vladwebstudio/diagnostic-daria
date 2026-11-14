@@ -17,7 +17,8 @@ const input =
 export default function ProfileForm({ state, update }: Props) {
   const { intro } = config;
   const diff = Math.max(0, state.incomeB - state.incomeA);
-  const perMonth = diff / Math.max(1, state.termMonths);
+  // Прирост всегда считаем в месяц (разница Б − А), срок достижения на него не влияет
+  const perMonth = diff;
   const multiplier = state.incomeA > 0 ? state.incomeB / state.incomeA : null;
 
   return (
@@ -71,7 +72,7 @@ export default function ProfileForm({ state, update }: Props) {
               <span className="text-xl font-bold text-emerald-600">
                 {formatMoney(perMonth, state.currency, { sign: true })}
               </span>
-              <span className="ml-1.5 text-xs text-slate-500">{state.termMonths ? "/міс" : "всього"}</span>
+              <span className="ml-1.5 text-xs text-slate-500">/міс</span>
             </div>
           </div>
           <span className="rounded-lg border border-emerald-300 bg-emerald-100 px-2.5 py-1 font-mono text-xs font-bold text-emerald-700">
@@ -100,11 +101,11 @@ export default function ProfileForm({ state, update }: Props) {
                   key={e}
                   type="button"
                   onClick={() => update({ employment: e })}
-                  className={`flex w-full items-center gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm transition ${
-                    active ? "border-ink bg-ink text-white" : "border-line bg-canvas text-slate-700 hover:bg-white"
+                  className={`flex w-full items-center gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-[#d9c9b3] ${
+                    active ? "border-[#cdb89c] bg-white font-medium text-[#5a4632] shadow-[0_1px_3px_rgba(90,70,50,.12)]" : "border-line bg-canvas text-slate-700 hover:bg-white"
                   }`}
                 >
-                  <span className={`h-2 w-2 rounded-full ${active ? "bg-emerald-400" : "bg-slate-300"}`} />
+                  <span className={`h-2 w-2 rounded-full ${active ? "bg-[#a88a66]" : "bg-slate-300"}`} />
                   {e}
                 </button>
               );

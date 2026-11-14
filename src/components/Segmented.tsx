@@ -13,8 +13,8 @@ export default function Segmented<T extends string | number>({ options, value, o
           key={String(o.value)}
           type="button"
           onClick={() => onChange(o.value)}
-          className={`rounded-lg px-2 py-2 text-sm font-medium transition ${
-            value === o.value ? "bg-ink text-white shadow-sm" : "text-slate-600 hover:bg-white"
+          className={`rounded-lg px-2 py-2 text-sm font-medium outline-none transition focus-visible:ring-2 focus-visible:ring-[#d9c9b3] ${
+            value === o.value ? "bg-white font-semibold text-[#5a4632] shadow-[0_1px_3px_rgba(90,70,50,.14)] ring-1 ring-[#d9c9b3]" : "text-slate-600 hover:bg-white"
           }`}
         >
           {o.label}
