@@ -182,7 +182,7 @@ export default function StateBlock({ state, update }: Props) {
                   <span className="min-w-0 flex-1">
                     <span className="block text-sm font-semibold">{d.label}</span>
                     {!isOpen && (
-                      <span className="mt-1 block text-[13px] leading-relaxed text-slate-500">
+                      <span className="mt-1 block text-[0.8125rem] leading-relaxed text-slate-500">
                         {cur ? d.levels[cur - 1] : "Натисніть, щоб обрати свій рівень"}
                       </span>
                     )}
@@ -199,7 +199,7 @@ export default function StateBlock({ state, update }: Props) {
                           key={l}
                           type="button"
                           onClick={() => pick(d.key, l)}
-                          className={`flex w-full items-start gap-3 rounded-xl border p-3 text-left text-[13px] leading-relaxed transition ${
+                          className={`flex w-full items-start gap-3 rounded-xl border p-3 text-left text-[0.8125rem] leading-relaxed transition ${
                             on
                               ? l <= 2
                                 ? "border-rose bg-rose-soft text-ink"
@@ -231,7 +231,7 @@ export default function StateBlock({ state, update }: Props) {
           <div className="relative overflow-hidden rounded-3xl bg-white p-5 shadow-card ring-1 ring-line">
             <div className="relative flex items-start justify-between gap-3">
               <div>
-                <div className="text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-400">Карта стану</div>
+                <div className="text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-slate-400">Карта стану</div>
                 <div className="mt-0.5 font-display text-xl font-semibold leading-tight">Ваш профіль зараз</div>
               </div>
               <div className="rounded-2xl bg-canvas px-3.5 py-1.5 text-right ring-1 ring-line">
@@ -253,7 +253,7 @@ export default function StateBlock({ state, update }: Props) {
               <div className="h-1.5 overflow-hidden rounded-full bg-canvas">
                 <div className="h-full rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 transition-all duration-300" style={{ width: `${(filled.length / dims.length) * 100}%` }} />
               </div>
-              <div className="flex items-center justify-between text-[11px] text-slate-500">
+              <div className="flex items-center justify-between text-[0.6875rem] text-slate-500">
                 <span>
                   Заповнено {filled.length} із {dims.length}
                 </span>
@@ -270,14 +270,14 @@ export default function StateBlock({ state, update }: Props) {
             <div className="rounded-2xl bg-gradient-to-b from-amber-50 to-white p-4 ring-1 ring-amber-200/80">
               <div className="flex items-baseline justify-between gap-2">
                 <h4 className="font-display text-xl font-semibold text-amber-900">{weakTitle}</h4>
-                <span className="text-[11px] text-slate-500">{weakNote}</span>
+                <span className="text-[0.6875rem] text-slate-500">{weakNote}</span>
               </div>
               <ul className="mt-3 space-y-2">
                 {weak.map((d) => (
                   <li key={d.key} className="rounded-xl border-l-[3px] border-amber-400 bg-white px-3.5 py-2.5 shadow-[0_1px_2px_rgba(15,23,42,.04)]">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[13px] font-semibold">{d.short}</span>
-                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-bold text-amber-800">{state.levels[d.key]}/5</span>
+                      <span className="text-[0.8125rem] font-semibold">{d.short}</span>
+                      <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[0.6875rem] font-bold text-amber-800">{state.levels[d.key]}/5</span>
                     </div>
                     <div className="mt-1 text-[12.5px] leading-snug text-slate-500">{hints[d.key].low}</div>
                     <div className="mt-0.5 text-[12.5px] leading-snug text-slate-700">
@@ -295,8 +295,8 @@ export default function StateBlock({ state, update }: Props) {
                 {strong.map((d) => (
                   <li key={d.key} className="rounded-xl border-l-[3px] border-mint bg-white px-3.5 py-2.5 shadow-[0_1px_2px_rgba(15,23,42,.04)]">
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-[13px] font-semibold">{d.short}</span>
-                      <span className="rounded-full bg-mint-soft px-2 py-0.5 text-[11px] font-bold text-mint">{state.levels[d.key]}/5</span>
+                      <span className="text-[0.8125rem] font-semibold">{d.short}</span>
+                      <span className="rounded-full bg-mint-soft px-2 py-0.5 text-[0.6875rem] font-bold text-mint">{state.levels[d.key]}/5</span>
                     </div>
                     <div className="mt-1 text-[12.5px] leading-snug text-slate-500">{hints[d.key].high}</div>
                   </li>

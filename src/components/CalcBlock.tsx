@@ -8,7 +8,7 @@ interface Props {
   update: (patch: Partial<ClientState>) => void;
 }
 
-const labelCls = "mb-1 block text-[10px] font-medium uppercase tracking-[0.18em] text-slate-500";
+const labelCls = "mb-1 block text-[0.625rem] font-medium uppercase tracking-[0.18em] text-slate-500";
 
 /** Числовое поле с суффиксом справа */
 function Pill({ label, value, onChange, suffix, hint }: { label: string; value: number; onChange: (v: number) => void; suffix: string; hint?: string }) {
@@ -26,7 +26,7 @@ function Pill({ label, value, onChange, suffix, hint }: { label: string; value: 
         />
         <span className="ml-2 text-xs text-slate-400">{suffix}</span>
       </span>
-      {hint && <span className="mt-1 block text-[11px] leading-snug text-slate-400">{hint}</span>}
+      {hint && <span className="mt-1 block text-[0.6875rem] leading-snug text-slate-400">{hint}</span>}
     </label>
   );
 }
@@ -37,7 +37,7 @@ function Out({ label, value, tone, hint }: { label: string; value: string; tone?
     <div className="rounded-2xl border border-[#d9d3ca] bg-white/70 px-3.5 py-2">
       <span className={labelCls}>{label}</span>
       <div className={`font-mono text-lg font-semibold ${tone === "mint" ? "text-mint" : ""}`}>{value}</div>
-      {hint && <div className="text-[11px] text-slate-400">{hint}</div>}
+      {hint && <div className="text-[0.6875rem] text-slate-400">{hint}</div>}
     </div>
   );
 }

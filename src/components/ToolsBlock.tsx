@@ -42,7 +42,7 @@ export default function ToolsBlock({ state, update }: Props) {
               style={cur ? { boxShadow: marks[cur].glow } : undefined}
             >
               <h3 className="font-display text-xl font-semibold leading-tight tracking-tight">{g.title}</h3>
-              <ul className="mt-3 divide-y divide-line/70 text-[13px] leading-snug text-slate-600">
+              <ul className="mt-3 divide-y divide-line/70 text-[0.8125rem] leading-snug text-slate-600">
                 {g.items.map((it) => (
                   <li key={it} className="py-1.5">
                     {it}
@@ -80,7 +80,7 @@ export default function ToolsBlock({ state, update }: Props) {
       <div className="mt-5 divide-y divide-line rounded-2xl bg-canvas px-4 ring-1 ring-line">
         {order.map((m) => (
           <div key={m} className="grid items-center gap-x-4 gap-y-1.5 py-3 sm:grid-cols-[11rem_1fr]">
-            <span className="flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-slate-500">
+            <span className="flex items-center gap-2 text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-slate-500">
               <span className={`h-2.5 w-2.5 rounded-full ${marks[m].dot}`} />
               {marks[m].label}
               {m === "urgent" && (
@@ -92,12 +92,12 @@ export default function ToolsBlock({ state, update }: Props) {
             <div className="flex flex-wrap gap-1.5">
               {groups.map((g, gi) =>
                 markOf(gi) === m ? (
-                  <span key={g.title} className={`rounded-full border px-3 py-1 text-[13px] font-medium ${marks[m].chip}`}>
+                  <span key={g.title} className={`rounded-full border px-3 py-1 text-[0.8125rem] font-medium ${marks[m].chip}`}>
                     {g.title}
                   </span>
                 ) : null,
               )}
-              {countOf(m) === 0 && <span className="text-[13px] text-slate-300">—</span>}
+              {countOf(m) === 0 && <span className="text-[0.8125rem] text-slate-300">—</span>}
             </div>
           </div>
         ))}

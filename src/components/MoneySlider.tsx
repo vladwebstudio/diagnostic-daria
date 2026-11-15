@@ -32,7 +32,7 @@ export default function MoneySlider({ label, tone, usd, maxUsd, currency, onChan
   return (
     <div>
       <div className="mb-2 flex items-center justify-between gap-3">
-        <label className="text-[11px] font-semibold tracking-[0.14em] text-slate-600">{label}</label>
+        <label className="text-[0.6875rem] font-semibold tracking-[0.14em] text-slate-600">{label}</label>
         <div className={`flex w-[126px] items-center rounded-xl border px-3 py-1 font-mono text-sm font-bold ${t.box}`}>
           <span>{sym}</span>
           <input
@@ -64,7 +64,7 @@ export default function MoneySlider({ label, tone, usd, maxUsd, currency, onChan
         aria-label={`${label}, ползунок`}
         style={{ "--c": t.c, "--halo": t.halo, "--track": t.track, "--p": `${pct}%` } as React.CSSProperties}
       />
-      <div className="mt-1.5 flex justify-between font-mono text-[10px] text-slate-500">
+      <div className="mt-1.5 flex justify-between font-mono text-[0.625rem] text-slate-500">
         <span>{sym}0</span>
         <span>
           {sym}

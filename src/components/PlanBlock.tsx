@@ -138,7 +138,7 @@ export default function PlanBlock({ state, update }: Props) {
             </button>
           </div>
 
-          <div className="mb-1 grid grid-cols-7 text-center text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">
+          <div className="mb-1 grid grid-cols-7 text-center text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
             {weekdays.map((w) => (
               <span key={w}>{w}</span>
             ))}
@@ -218,7 +218,7 @@ export default function PlanBlock({ state, update }: Props) {
                 style={on ? { borderColor: col, boxShadow: `0 8px 24px -16px ${col}` } : undefined}
                 className="flex cursor-pointer items-start gap-3 rounded-2xl border border-line bg-white px-4 py-2.5 transition"
               >
-                <span className="flex h-9 w-52 shrink-0 items-center gap-2 whitespace-nowrap text-[11px] font-bold uppercase tracking-[0.12em] text-slate-600">
+                <span className="flex h-9 w-52 shrink-0 items-center gap-2 whitespace-nowrap text-[0.6875rem] font-bold uppercase tracking-[0.12em] text-slate-600">
                   <span className="h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: col }} />
                   {rangeLabel(s.from, s.to)}
                 </span>

@@ -59,7 +59,7 @@ export default function CasesModal({ onClose }: { onClose: () => void }) {
           <div className="grid gap-3 sm:grid-cols-2">
             {items.map((c, i) => (
               <article key={i} className="rounded-2xl border border-line bg-white p-4">
-                <div className="text-[10px] font-semibold uppercase tracking-[0.18em] text-slate-400">{c.niche}</div>
+                <div className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-slate-400">{c.niche}</div>
                 <h3 className="mt-1 font-display text-xl font-semibold">{c.title}</h3>
                 <div className="mt-2 inline-block rounded-full bg-[#f3ece2] px-3 py-1 text-xs font-semibold text-[#5a4632]">{c.result}</div>
                 <p className="mt-3 text-sm leading-relaxed text-slate-600">{c.text}</p>

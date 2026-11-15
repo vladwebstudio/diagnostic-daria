@@ -34,12 +34,14 @@ export default function App() {
       <main className="mx-auto max-w-[1440px] space-y-4 px-4 py-4 sm:px-6">
         <Hero />
 
-        <div className="grid items-start gap-4 lg:grid-cols-[minmax(340px,0.8fr)_minmax(0,1.2fr)]">
-          <ProfileForm state={state} update={update} />
-          <LiveAnalysis state={state} update={update} />
-        </div>
+        <ProfileForm state={state} update={update} />
+        <LiveAnalysis state={state} update={update} keys={["experience", "pain"]} stack />
 
         <StateBlock state={state} update={update} />
+
+        {/* Точка Б: после полного разбора «точки А» */}
+        <LiveAnalysis state={state} update={update} keys={["product", "ideal"]} title="Ваша мета та бажаний результат" />
+
         <ToolsBlock state={state} update={update} />
         <CalcBlock state={state} update={update} />
         <PlanBlock state={state} update={update} />
