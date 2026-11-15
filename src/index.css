@@ -8,6 +8,11 @@ body { background-color: rgb(var(--canvas)); }
 .bg-canvas\/85 { background-color: rgb(var(--canvas) / 0.85); }
 .border-line, .hover\:border-line:hover { border-color: rgb(var(--line)); }
 .border-line\/70 { border-color: rgb(var(--line) / 0.7); }
+/* Цветные левые плашки карточек вопросов: не перебиваем общим border-line */
+.border-l-slate-300 { border-left-color: #94a3b8; }
+.border-l-rose { border-left-color: #e11d48; }
+.border-l-ink { border-left-color: #0f172a; }
+.border-l-mint { border-left-color: #16a34a; }
 .ring-line { --tw-ring-color: rgb(var(--line)); }
 .divide-line > :not([hidden]) ~ :not([hidden]) { border-color: rgb(var(--line)); }
 .divide-line\/70 > :not([hidden]) ~ :not([hidden]) { border-color: rgb(var(--line) / 0.7); }
