@@ -10,8 +10,8 @@ interface Props {
 }
 
 /** Колір етапів: спокійний сіро-синій. */
-const BLUE = "#a88a66"; // один колір для всіх етапів: тепле коричневе з палітри сайту
-const BLUE_SOFT = "#cdb89c";
+const BLUE = "rgb(var(--acc))"; // один колір для всіх етапів: тепле коричневе з палітри сайту
+const BLUE_SOFT = "rgb(var(--acc-soft))";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 const iso = (y: number, m: number, d: number) => `${y}-${pad(m + 1)}-${pad(d)}`;
@@ -48,7 +48,7 @@ function StepText({ value, onChange }: { value: string; onChange: (v: string) =>
       rows={1}
       value={value}
       onChange={(e) => onChange(e.target.value)}
-      className="block min-w-0 flex-1 resize-none overflow-hidden rounded-2xl border border-line bg-canvas px-4 py-1.5 text-sm leading-6 outline-none transition focus:border-[#cdb89c] focus:bg-white"
+      className="block min-w-0 flex-1 resize-none overflow-hidden rounded-2xl border border-line bg-canvas px-4 py-1.5 text-sm leading-6 outline-none transition focus:border-[rgb(var(--acc-soft))] focus:bg-white"
     />
   );
 }
@@ -157,7 +157,7 @@ export default function PlanBlock({ state, update }: Props) {
               const isTo = !!st && st.to === id;
               const edge = isFrom || isTo;
               // смуга діапазону: суцільна, з округленням на краях етапу, тижня та місяця
-              const band = st ? (isActive ? `${BLUE}2e` : `${BLUE}1a`) : inPreview ? "#f3ece2" : "transparent";
+              const band = st ? (isActive ? "rgb(var(--acc) / 0.18)" : "rgb(var(--acc) / 0.1)") : inPreview ? "rgb(var(--acc-tint))" : "transparent";
               const pFrom = !!preview && preview[0] === id;
               const pTo = !!preview && preview[1] === id;
               const rl = ((st ? isFrom : pFrom) || col === 0 || d === 1) && (st || inPreview) ? "rounded-l-full" : "";
@@ -189,7 +189,7 @@ export default function PlanBlock({ state, update }: Props) {
             <button
               type="button"
               onClick={() => setStart(null)}
-              className="mt-3 w-full rounded-full border border-[#cdb89c] bg-white px-4 py-1.5 text-xs font-semibold text-[#5a4632] transition hover:bg-[#f3ece2]"
+              className="mt-3 w-full rounded-full border border-[rgb(var(--acc-soft))] bg-white px-4 py-1.5 text-xs font-semibold text-[rgb(var(--acc-dark))] transition hover:bg-[rgb(var(--acc-tint))]"
             >
               Скасувати вибір
             </button>
@@ -199,7 +199,7 @@ export default function PlanBlock({ state, update }: Props) {
         {/* Етапи */}
         <div className="space-y-2.5">
           {sorted.length === 0 && (
-            <div className="flex min-h-[8rem] items-center justify-center rounded-3xl border border-dashed border-[#cdb89c] bg-white/60 px-5 py-10 text-center text-sm text-[#5a4632]">
+            <div className="flex min-h-[8rem] items-center justify-center rounded-3xl border border-dashed border-[rgb(var(--acc-soft))] bg-white/60 px-5 py-10 text-center text-sm text-[rgb(var(--acc-dark))]">
               {start ? "Оберіть дату завершення" : "Оберіть дату"}
             </div>
           )}

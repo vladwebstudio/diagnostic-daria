@@ -2,23 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Палитра страницы через CSS-переменные: переопределяем цвета canvas/line из Tailwind */
+body { background-color: rgb(var(--canvas)); }
+.bg-canvas, .hover\:bg-canvas:hover { background-color: rgb(var(--canvas)); }
+.bg-canvas\/85 { background-color: rgb(var(--canvas) / 0.85); }
+.border-line, .hover\:border-line:hover { border-color: rgb(var(--line)); }
+.border-line\/70 { border-color: rgb(var(--line) / 0.7); }
+.ring-line { --tw-ring-color: rgb(var(--line)); }
+.divide-line > :not([hidden]) ~ :not([hidden]) { border-color: rgb(var(--line)); }
+.divide-line\/70 > :not([hidden]) ~ :not([hidden]) { border-color: rgb(var(--line) / 0.7); }
+
 :root {
   color-scheme: light;
+  /* Светло-серая палитра (по умолчанию) */
+  --canvas: 241 243 245;
+  --line: 226 229 233;
+  --line2: 208 213 220;
+  --acc: 100 116 139;
+  --acc-dark: 51 65 85;
+  --acc-soft: 203 213 225;
+  --acc-ring: 226 232 240;
+  --acc-tint: 236 240 245;
+}
+/* Нежно-розовая палитра для нижней половины страницы */
+.theme-pink {
+  --canvas: 251 241 243;
+  --line: 240 222 227;
+  --line2: 228 205 213;
+  --acc: 214 110 140;
+  --acc-dark: 136 45 78;
+  --acc-soft: 241 187 204;
+  --acc-ring: 248 214 224;
+  --acc-tint: 253 234 240;
 }
 
 html {
   font-size: 112.5%;
   scrollbar-width: thin;
-  scrollbar-color: #d9d3ca transparent;
+  scrollbar-color: rgb(var(--line2)) transparent;
 }
 ::-webkit-scrollbar { width: 10px; height: 8px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
-  background: #d9d3ca;
+  background: rgb(var(--line2));
   border-radius: 999px;
-  border: 3px solid #f7f5f2;
+  border: 3px solid rgb(var(--canvas));
 }
-::-webkit-scrollbar-thumb:hover { background: #c4bcb0; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--line2)); }
 
 @keyframes pop {
   from { opacity: 0; transform: translateY(-4px) scale(0.98); }
@@ -83,7 +113,7 @@ input[type="range"].slider::-moz-range-thumb {
 /* Калькулятор: толстая полоса с контуром, бегунок — маленький красный кружок */
 input[type="range"].slider.slider-bar {
   height: 8px;
-  box-shadow: inset 0 0 0 1.5px #d9d3ca;
+  box-shadow: inset 0 0 0 1.5px rgb(var(--line2));
 }
 input[type="range"].slider.slider-bar::-webkit-slider-thumb {
   width: 14px;

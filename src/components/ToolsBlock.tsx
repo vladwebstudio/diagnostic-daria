@@ -61,7 +61,7 @@ export default function ToolsBlock({ state, update }: Props) {
                       disabled={blocked}
                       onClick={() => setMark(gi, m)}
                       title={blocked ? `Першочергових може бути не більше ${maxFirst}` : undefined}
-                      className={`flex items-center justify-center gap-1.5 rounded-lg border px-1 py-1.5 text-[11.5px] font-medium outline-none transition focus-visible:ring-2 focus-visible:ring-[#d9c9b3] ${
+                      className={`flex items-center justify-center gap-1.5 rounded-lg border px-1 py-1.5 text-[11.5px] font-medium outline-none transition focus-visible:ring-2 focus-visible:ring-[rgb(var(--acc-ring))] ${
                         active ? marks[m].on : "border-transparent bg-canvas text-slate-500 hover:border-line hover:bg-white"
                       } ${blocked ? "cursor-not-allowed opacity-40" : ""}`}
                     >

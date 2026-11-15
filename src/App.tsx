@@ -31,14 +31,20 @@ export default function App() {
     <div className="min-h-screen">
       <Header currency={state.currency} onCurrency={changeCurrency} />
 
-      <main className="mx-auto max-w-[1440px] space-y-4 px-4 py-4 sm:px-6">
+      <main>
+        <div className="bg-canvas">
+          <div className="mx-auto max-w-[1440px] space-y-4 px-4 py-4 sm:px-6">
         <Hero />
 
         <ProfileForm state={state} update={update} />
         <LiveAnalysis state={state} update={update} keys={["experience", "pain"]} stack />
 
         <StateBlock state={state} update={update} />
+          </div>
+        </div>
 
+        <div className="theme-pink bg-canvas">
+          <div className="mx-auto max-w-[1440px] space-y-4 px-4 py-4 sm:px-6">
         {/* Точка Б: после полного разбора «точки А» */}
         <LiveAnalysis state={state} update={update} keys={["product", "ideal"]} title="Ваша мета та бажаний результат" />
 
@@ -55,6 +61,8 @@ export default function App() {
           >
             Очистити
           </button>
+        </div>
+          </div>
         </div>
       </main>
     </div>

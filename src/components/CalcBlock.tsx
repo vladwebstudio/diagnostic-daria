@@ -15,7 +15,7 @@ function Pill({ label, value, onChange, suffix, hint }: { label: string; value: 
   return (
     <label className="block">
       <span className={labelCls}>{label}</span>
-      <span className="flex items-center rounded-full border border-[#d9d3ca] bg-white/70 px-3.5 py-1.5 transition focus-within:border-[#a88a66] focus-within:bg-white">
+      <span className="flex items-center rounded-full border border-[rgb(var(--line2))] bg-white/70 px-3.5 py-1.5 transition focus-within:border-[rgb(var(--acc))] focus-within:bg-white">
         <input
           type="number"
           min={0}
@@ -34,7 +34,7 @@ function Pill({ label, value, onChange, suffix, hint }: { label: string; value: 
 /** Считаемое значение (только чтение) */
 function Out({ label, value, tone, hint }: { label: string; value: string; tone?: "mint"; hint?: string }) {
   return (
-    <div className="rounded-2xl border border-[#d9d3ca] bg-white/70 px-3.5 py-2">
+    <div className="rounded-2xl border border-[rgb(var(--line2))] bg-white/70 px-3.5 py-2">
       <span className={labelCls}>{label}</span>
       <div className={`font-mono text-lg font-semibold ${tone === "mint" ? "text-mint" : ""}`}>{value}</div>
       {hint && <div className="text-[0.6875rem] text-slate-400">{hint}</div>}
@@ -58,7 +58,7 @@ function PctSlider({ label, value, onChange }: { label: string; value: number; o
         onChange={(e) => onChange(Number(e.target.value))}
         className="slider slider-bar"
         aria-label={label}
-        style={{ "--c": "#e11d48", "--halo": "rgba(225,29,72,.18)", "--track": "#e7e3dd", "--p": `${value}%` } as React.CSSProperties}
+        style={{ "--c": "#e11d48", "--halo": "rgba(225,29,72,.18)", "--track": "rgb(var(--line))", "--p": `${value}%` } as React.CSSProperties}
       />
     </div>
   );
@@ -96,7 +96,7 @@ export default function CalcBlock({ state, update }: Props) {
   return (
     <Section title={title} goal={goal}>
       <div className="grid items-start gap-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(260px,1fr)]">
-        <div className="space-y-3.5 rounded-3xl border border-[#d9d3ca] p-4">
+        <div className="space-y-3.5 rounded-3xl border border-[rgb(var(--line2))] p-4">
           <div className="grid gap-3 sm:grid-cols-2">
             <Pill label="Середній чек (клієнт платить за товар)" {...money("check")} />
             <Pill label="Рекламний бюджет" {...money("budget")} />

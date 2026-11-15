@@ -48,7 +48,7 @@ function Radar({ values }: { values: number[] }) {
         </linearGradient>
         <radialGradient id="radarBg" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stopColor="#ffffff" />
-          <stop offset="100%" stopColor="#f3efe9" />
+          <stop offset="100%" stopColor="rgb(var(--canvas))" />
         </radialGradient>
         {[
           ["glowRed", "#f43f5e"],
@@ -90,12 +90,12 @@ function Radar({ values }: { values: number[] }) {
         );
       })}
       {[1, 2, 3, 4].map((l) => (
-        <polygon key={l} points={ring(l)} fill="none" stroke="#e2dcd2" strokeWidth={1} strokeDasharray="2 4" />
+        <polygon key={l} points={ring(l)} fill="none" stroke="rgb(var(--line))" strokeWidth={1} strokeDasharray="2 4" />
       ))}
-      <polygon points={ring(5)} fill="none" stroke="#d6cfc4" strokeWidth={1.5} />
+      <polygon points={ring(5)} fill="none" stroke="rgb(var(--line2))" strokeWidth={1.5} />
       {dims.map((_, i) => {
         const [x, y] = pt(i, n, R);
-        return <line key={i} x1={CX} y1={CY} x2={x} y2={y} stroke="#e2dcd2" strokeDasharray="2 4" />;
+        return <line key={i} x1={CX} y1={CY} x2={x} y2={y} stroke="rgb(var(--line))" strokeDasharray="2 4" />;
       })}
       {[1, 2, 3, 4, 5].map((l) => (
         <text key={l} x={CX + 5} y={CY - (R * l) / 5 + 3} fontSize="8.5" className="fill-slate-400" fontWeight={600}>

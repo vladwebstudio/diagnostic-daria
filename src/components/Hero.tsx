@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative flex items-center overflow-hidden rounded-3xl bg-white p-6 shadow-card ring-1 ring-line md:px-20 md:py-6 md:min-h-[28rem]">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-[30rem] w-[30rem] rounded-full bg-gradient-to-br from-amber-100 via-rose-50 to-transparent blur-2xl"
+        className="pointer-events-none absolute -right-24 -top-24 h-[30rem] w-[30rem] rounded-full bg-gradient-to-br from-[rgb(var(--acc-soft))] via-[rgb(var(--acc-tint))] to-transparent blur-2xl"
       />
       <div className="relative grid w-full items-center gap-8 md:grid-cols-[1fr_auto] lg:gap-14">
         <div>

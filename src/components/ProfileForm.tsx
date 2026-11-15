@@ -59,11 +59,11 @@ export default function ProfileForm({ state, update }: Props) {
                   key={e}
                   type="button"
                   onClick={() => update({ employment: e })}
-                  className={`flex w-full items-center gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-[#d9c9b3] ${
-                    active ? "border-[#cdb89c] bg-white font-medium text-[#5a4632] shadow-[0_1px_3px_rgba(90,70,50,.12)]" : "border-line bg-canvas text-slate-700 hover:bg-white"
+                  className={`flex w-full items-center gap-3 rounded-xl border px-3.5 py-2.5 text-left text-sm outline-none transition focus-visible:ring-2 focus-visible:ring-[rgb(var(--acc-ring))] ${
+                    active ? "border-[rgb(var(--acc-soft))] bg-white font-medium text-[rgb(var(--acc-dark))] shadow-[0_1px_3px_rgba(15,23,42,.12)]" : "border-line bg-canvas text-slate-700 hover:bg-white"
                   }`}
                 >
-                  <span className={`h-2 w-2 rounded-full ${active ? "bg-[#a88a66]" : "bg-slate-300"}`} />
+                  <span className={`h-2 w-2 rounded-full ${active ? "bg-[rgb(var(--acc))]" : "bg-slate-300"}`} />
                   {e}
                 </button>
               );
