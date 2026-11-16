@@ -43,7 +43,7 @@ export default function App() {
           </div>
         </div>
 
-        <div className="theme-pink bg-canvas">
+        <div className="bg-canvas">
           <div className="mx-auto max-w-[1440px] space-y-4 px-4 py-4 sm:px-6">
         {/* Точка Б: после полного разбора «точки А» */}
         <LiveAnalysis state={state} update={update} keys={["product", "ideal"]} title="Ваша мета та бажаний результат" />

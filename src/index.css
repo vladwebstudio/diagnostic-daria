@@ -29,17 +29,6 @@ body { background-color: rgb(var(--canvas)); }
   --acc-ring: 226 232 240;
   --acc-tint: 236 240 245;
 }
-/* Нежно-розовая палитра для нижней половины страницы */
-.theme-pink {
-  --canvas: 251 241 243;
-  --line: 240 222 227;
-  --line2: 228 205 213;
-  --acc: 214 110 140;
-  --acc-dark: 136 45 78;
-  --acc-soft: 241 187 204;
-  --acc-ring: 248 214 224;
-  --acc-tint: 253 234 240;
-}
 
 html {
   font-size: 112.5%;
